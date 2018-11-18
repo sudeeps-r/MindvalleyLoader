@@ -19,6 +19,7 @@ class HomeScreen : BaseActivity(), HasSupportFragmentInjector {
 
 
     override fun supportFragmentInjector() = fragmentInjector
+
     @Inject
     lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
