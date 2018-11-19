@@ -18,7 +18,7 @@ class MemCacheImpl private constructor() : CacheRequest {
     //    private val map: MutableMap<Int, Bitmap> = WeakHashMap<Int, Bitmap>(getSize())
     //* The cache should have a configurable max capacity and should evict images not recently used;
 
-    private val map: MutableMap<Int, Bitmap> = HashMap<Int, Bitmap>(getSize())
+    private val map: MutableMap<Int, Bitmap> = HashMap<Int, Bitmap>(getSize()) //Possible memory issue #TODO with lrucache or weakhashmap // frequent GC weakhashmap is not an option
 
     init {
 
