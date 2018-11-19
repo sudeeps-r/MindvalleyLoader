@@ -30,7 +30,7 @@ class RequestDispatcher private constructor() {
     fun handleDefaultCase(request: Request) {
         if (request.placeHolder!! > 0){
 
-            val handler:Handler= Handler(Looper.getMainLooper())
+            val handler= Handler(Looper.getMainLooper())
             handler.post(Runnable {
                 request.imageView?.setImageResource(request.placeHolder!!)
             })
