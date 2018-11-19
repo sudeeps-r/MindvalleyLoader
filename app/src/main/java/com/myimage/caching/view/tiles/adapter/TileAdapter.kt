@@ -9,7 +9,7 @@ import com.myimage.caching.view.binding.BaseAdapter
  * Company <Reliance Payment Solutions Ltd.>
  * Email <sudeep.sr@ril.com>
  */
-class TileAdapter(val layoutId: Int, val loaderId: Int) : BaseAdapter() {
+class TileAdapter(val viewLayout: Int, val loaderLayout: Int) : BaseAdapter() {
 
 
     private var tileList: MutableList<Tile> = mutableListOf()
@@ -25,11 +25,13 @@ class TileAdapter(val layoutId: Int, val loaderId: Int) : BaseAdapter() {
     }
 
     override fun getLayoutIdForPosition(position: Int): Int {
-        if (showLoader && position == tileList.size) {
-            Log.e("show loader","show loader")
-            return loaderId
+        Log.e("show loader","show loader$showLoader,pos $position")
+        if (position<tileList.size) {
+
+            return viewLayout
         } else {
-            return layoutId
+            Log.e("show loader","show loader>>")
+            return loaderLayout
         }
     }
 

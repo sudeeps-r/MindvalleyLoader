@@ -35,7 +35,7 @@ class TileFragment : BaseFragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var tileViewModel: TileViewModel
-    private val tileAdapter = TileAdapter(R.layout.list_row,R.layout.list_row)
+    private val tileAdapter = TileAdapter(R.layout.list_row,R.layout.load_more)
     private lateinit var endlessScrollListener: EndlessScrollListener
     private var databing by autoCleared<ListviewBinding>()
 
