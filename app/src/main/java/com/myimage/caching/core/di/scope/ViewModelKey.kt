@@ -1,4 +1,4 @@
-package com.myimage.caching._core.di.scope
+package com.myimage.caching.core.di.scope
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

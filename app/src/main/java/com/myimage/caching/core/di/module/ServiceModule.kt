@@ -1,8 +1,7 @@
-package com.myimage.caching._core.di.module
+package com.myimage.caching.core.di.module
 
 
-import com.myimage.caching._core.domain.api.TileService
-import dagger.Binds
+import com.myimage.caching.core.domain.api.TileService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

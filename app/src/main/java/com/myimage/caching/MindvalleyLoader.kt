@@ -2,8 +2,7 @@ package com.myimage.caching
 
 import android.app.Activity
 import android.app.Application
-import com.myimage.caching._core.di.AppConfiguration
-import dagger.android.AndroidInjector
+import com.myimage.caching.core.di.AppConfiguration
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject

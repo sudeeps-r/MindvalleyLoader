@@ -1,16 +1,15 @@
-package com.myimage.caching._core.di
+package com.myimage.caching.core.di
 
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.myimage.caching.MindvalleyLoader
-import com.myimage.caching._core.di.component.DaggerAppComponent
+import com.myimage.caching.core.di.component.DaggerAppComponent
 
-import com.myimage.caching._core.di.component.Injectable
+import com.myimage.caching.core.di.component.Injectable
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
@@ -62,7 +61,7 @@ class AppConfiguration {
         }
 
         if (activity is AppCompatActivity) {
-            print("inside app compact")
+            //print("inside app compact")
             activity.supportFragmentManager.registerFragmentLifecycleCallbacks(object : FragmentManager.FragmentLifecycleCallbacks() {
 
                 override fun onFragmentCreated(fm: FragmentManager, f: Fragment, savedInstanceState: Bundle?) {

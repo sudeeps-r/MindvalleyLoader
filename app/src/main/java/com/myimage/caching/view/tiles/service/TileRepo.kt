@@ -1,12 +1,8 @@
 package com.myimage.caching.view.tiles.service
 
 
-import com.myimage.caching._core.domain.api.TileService
-import com.myimage.caching._core.domain.data.tile_service.Tile
-import com.myimage.caching._core.service.BaseRepo
-import io.reactivex.Observable
-import io.reactivex.Scheduler
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.myimage.caching.core.domain.api.TileService
+import com.myimage.caching.core.service.BaseRepo
 import javax.inject.Inject
 
 /**

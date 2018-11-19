@@ -1,4 +1,4 @@
-package com.myimage.caching._core.di.module
+package com.myimage.caching.core.di.module
 
 /**
  * Created by Sudeep SR on 17/11/18.

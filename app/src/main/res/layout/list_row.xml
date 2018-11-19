@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginBottom="5dp"
-    android:foreground="@drawable/custom_ripple"
-    android:clickable="true"
-    app:cardCornerRadius="4dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="rowItem"
+            type="com.myimage.caching.core.domain.data.tileService.Tile" />
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="vertical">
-        <!--app:layout_constraintDimensionRatio="4:3"-->
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:foreground="@drawable/custom_ripple"
+        app:cardCornerRadius="4dp">
 
-        <ImageView
-            android:id="@+id/ivImageIcon"
-            android:layout_width="100dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:adjustViewBounds="true"
+            android:orientation="vertical">
+            <!--app:layout_constraintDimensionRatio="4:3"-->
 
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/ivImageIcon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                app:imageUrl="@{rowItem.user.profileImage.small}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:textColor="@android:color/black"
-            app:layout_constraintLeft_toRightOf="@id/ivImageIcon"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/black"
+                app:layout_constraintLeft_toRightOf="@id/ivImageIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:preComText="@{rowItem.user.name}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,4 +1,4 @@
-package com.myimage.caching._core.di.module
+package com.myimage.caching.core.di.module
 
 import com.myimage.caching.HomeScreen
 import com.myimage.caching.view.tiles.TileFragment

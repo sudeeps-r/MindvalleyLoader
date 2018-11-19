@@ -1,13 +1,11 @@
 package com.myimage.caching.view.tiles
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.myimage.caching._core.domain.data.tile_service.ErrorResponse
-import com.myimage.caching._core.domain.data.tile_service.Tile
+import com.myimage.caching.core.domain.data.tileService.ErrorResponse
+import com.myimage.caching.core.domain.data.tileService.Tile
 import com.myimage.caching.view.tiles.service.TileRepo
 import com.myimage.caching.view.util.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
@@ -25,7 +23,8 @@ class TileViewModel @Inject constructor(val tileRepo: TileRepo):BaseViewModel() 
 
     //map or switch map is not needed
 
-    fun fetchTileList(){
+    fun fetchTileList(refresh:Boolean){
+       refreshStatus(refresh)
        compositeData.add(tileRepo.tileService.getTileUrls().observeOn(AndroidSchedulers.mainThread()).subscribeWith(object :DisposableObserver<List<Tile>>(){
            override fun onComplete() {
 

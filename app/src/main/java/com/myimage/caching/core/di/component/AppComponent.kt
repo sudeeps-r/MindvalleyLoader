@@ -1,15 +1,11 @@
-package com.myimage.caching._core.di.component
+package com.myimage.caching.core.di.component
 
-import android.content.Context
 import com.myimage.caching.MindvalleyLoader
-import com.myimage.caching._core.di.module.ActivityModule
-import com.myimage.caching._core.di.module.AppModule
-import com.myimage.caching._core.di.module.ServiceModule
-import com.myimage.caching._core.di.module.ViewModelModule
-import dagger.BindsInstance
+import com.myimage.caching.core.di.module.ActivityModule
+import com.myimage.caching.core.di.module.ServiceModule
+import com.myimage.caching.core.di.module.ViewModelModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import dagger.android.support.AndroidSupportInjection
 import javax.inject.Singleton
 
 /**

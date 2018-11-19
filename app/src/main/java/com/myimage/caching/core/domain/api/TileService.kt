@@ -1,6 +1,6 @@
-package com.myimage.caching._core.domain.api
+package com.myimage.caching.core.domain.api
 
-import com.myimage.caching._core.domain.data.tile_service.Tile
+import com.myimage.caching.core.domain.data.tileService.Tile
 import io.reactivex.Observable
 import retrofit2.http.GET
 

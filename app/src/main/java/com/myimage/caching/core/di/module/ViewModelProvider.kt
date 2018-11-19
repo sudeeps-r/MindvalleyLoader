@@ -1,8 +1,8 @@
-package com.myimage.caching._core.di.module
+package com.myimage.caching.core.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.myimage.caching._core.di.scope.ViewModelKey
+import com.myimage.caching.core.di.scope.ViewModelKey
 import com.myimage.caching.view.tiles.TileViewModel
 import dagger.Binds
 import dagger.Module

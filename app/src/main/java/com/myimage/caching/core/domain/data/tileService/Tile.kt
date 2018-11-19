@@ -1,4 +1,4 @@
-package com.myimage.caching._core.domain.data.tile_service
+package com.myimage.caching.core.domain.data.tileService
 
 import com.google.gson.annotations.SerializedName
 

@@ -16,11 +16,11 @@ import java.util.*
 
 
 //Optional parameters is throwing error with enum
- //TODO sealed class/higher order function
+ //TODO higher order function
 
     companion object {
 
-        fun loadResource(url: String, placeHolder: Int = -1,requestType: RequestType = RequestType.BITMAP, cachePolicy: CachePolicy = CachePolicy.MEMORY, imageView: ImageView? = null, callBack:Callback<Any>? = null): ResRequest {
+        fun loadResource(url: String?, placeHolder: Int = -1,requestType: RequestType = RequestType.BITMAP, cachePolicy: CachePolicy = CachePolicy.MEMORY, imageView: ImageView? = null, callBack:Callback<Any>? = null): ResRequest {
 
             url?.let {
                 val request = Request(url, imageView, requestType, placeHolder, cachePolicy, callBack)
@@ -29,7 +29,7 @@ import java.util.*
 
             return ResRequest()
         }
-        fun loadResource(url: String, placeHolder: Int = -1, imageView: ImageView? = null,cachePolicy: CachePolicy = CachePolicy.MEMORY): ResRequest {
+        fun loadResource(url: String?, placeHolder: Int = -1, imageView: ImageView? = null,cachePolicy: CachePolicy = CachePolicy.MEMORY): ResRequest {
 
             url?.let {
                 val request = Request(url, imageView, RequestType.BITMAP,placeHolder, cachePolicy, null)
@@ -38,7 +38,7 @@ import java.util.*
 
             return ResRequest()
         }
-        fun loadResource(url: String,requestType: RequestType = RequestType.JSON, callBack:Callback<Any>? = null,cachePolicy: CachePolicy = CachePolicy.MEMORY): ResRequest {
+        fun loadResource(url: String?,requestType: RequestType = RequestType.JSON, callBack:Callback<Any>? = null,cachePolicy: CachePolicy = CachePolicy.MEMORY): ResRequest {
 
             url?.let {
                 val request = Request(url, null,requestType, -1, cachePolicy, callBack)
