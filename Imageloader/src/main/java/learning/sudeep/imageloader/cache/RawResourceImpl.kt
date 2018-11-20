@@ -13,32 +13,34 @@ import java.util.*
  */
 class RawResourceImpl : CacheRequest {
 
-    // private var lruCache: LruCache<Int, String>
-    private val map: MutableMap<Int, String> = HashMap<Int, String>(getSize())
+    private val lruCache: LruCache<Int, String>
+  //  private val map: MutableMap<Int, String> = HashMap<Int, String>(getSize())
 
     init {
 
-//        lruCache = object : LruCache<Int, String>(getSize()) {
-//
-//            override fun sizeOf(key: Int, bitmap: String): Int {
-//
-//                return bitmap.length / memSize()
-//            }
-//        }
+        lruCache = object : LruCache<Int, String>(getSize()) {
+
+            override fun sizeOf(key: Int, str: String): Int {
+                if(getSize()!=-1){
+                    return getSize()
+                }
+                return str.length/memSize()
+            }
+        }
     }
 
     companion object : SingletonHolder<RawResourceImpl>(::RawResourceImpl)
 
     override fun getItem(key: Int): String? {
-        if (map.containsKey(key)) {
-            return map.get(key);
-        }
-        return null
+//        if (map.containsKey(key)) {
+//            return map.get(key);
+//        }
+        return lruCache.get(key)
     }
 
     override fun addToCache(key: Int, byteArray: Any) {
-        limitSize(map as HashMap<Int, Any>)
-        map.put(key, byteArray)
+      //  limitSize(map as HashMap<Int, Any>)
+        lruCache.put(key, byteArray as String)
     }
 
 }

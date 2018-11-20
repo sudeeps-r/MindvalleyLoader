@@ -48,4 +48,4 @@ interface Callback<in T> {
 
 //SDK property
 
-data class MProperty(val cacheSize:Int=10)
+data class MProperty(val cacheSize:Int=-1)
