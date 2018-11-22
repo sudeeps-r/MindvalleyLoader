@@ -47,6 +47,7 @@ class TileFragment : BaseFragment(), Injectable {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):View{
         var dataBindingUtil=DataBindingUtil.inflate<ListviewBinding>(inflater,R.layout.listview,container,false)
         databing=dataBindingUtil
+       
         return dataBindingUtil.root
     }
 
