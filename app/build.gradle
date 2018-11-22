@@ -39,7 +39,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':Imageloader')
-
     implementation dep.kotlin.stdlib
     implementation dep.app_compact.v7
     implementation dep.app_compact.constraint
@@ -58,7 +57,6 @@ dependencies {
     kapt dep.dagger.compiler
     kapt dep.dagger.androidAnnt
     implementation dep.dagger.androidSupport
-
     testImplementation dep.app_test.junit
     androidTestImplementation dep.app_test.runner
     androidTestImplementation dep.app_test.espresso
